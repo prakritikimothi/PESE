@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PESE 610 Professional E-Portfolio showcasing skills, assignments, and achievements">
+  <meta name="keywords" content="e-portfolio, professional development, PESE 610, skills showcase">
+  <meta name="author" content="PESE 610 Student">
+  <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self'; 
+                 style-src 'self' 'unsafe-inline' fonts.googleapis.com; 
+                 font-src 'self' fonts.gstatic.com; 
+                 script-src 'self' 'unsafe-inline'; 
+                 img-src 'self' data: https:;">
+  
+  <title>PESE 610 E-Portfolio - Professional Development Showcase</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@400;700&display=swap" as="style">
+  <link rel="preload" as="script" href="#inline-script">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Color System */
+      --color-primary-900: #0b1f3b;
+      --color-primary-800: #1a2f4a;
+      --color-primary-700: #2a4f6a;
+      --color-secondary-500: #e63946;
+      --color-secondary-400: #f1545f;
+      --color-accent-400: #f4d35e;
+      --color-accent-300: #f6e07a;
+      --color-bg-primary: #f8f9fa;
+      --color-bg-secondary: #ffffff;
+      --color-text-primary: #2e2e2e;
+      --color-text-secondary: #6c757d;
+      --color-text-light: #ffffff;
+      
+      /* Shadows */
+      --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.1);
+      --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.15);
+      
+      /* Typography Scale */
+      --font-size-xs: clamp(0.75rem, 0.5vw + 0.65rem, 0.875rem);
+      --font-size-sm: clamp(0.875rem, 0.75vw + 0.75rem, 1rem);
+      --font-size-base: clamp(1rem, 1vw + 0.875rem, 1.125rem);
+      --font-size-lg: clamp(1.125rem, 1.5vw + 1rem, 1.25rem);
+      --font-size-xl: clamp(1.25rem, 2vw + 1.125rem, 1.5rem);
+      --font-size-2xl: clamp(1.5rem, 2.5vw + 1.25rem, 2rem);
+      --font-size-3xl: clamp(2rem, 3vw + 1.5rem, 3rem);
+      
+      /* Font Families & Weights */
+      --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-family-serif: 'Playfair Display', Georgia, serif;
+      --font-weight-light: 300;
+      --font-weight-regular: 400;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      --font-weight-black: 900;
+      
+      /* Spacing System */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+      
+      /* Border Radius */
+      --border-radius-sm: 4px;
+      --border-radius-md: 8px;
+      --border-radius-lg: 12px;
+      --border-radius-xl: 16px;
+      
+      /* Transitions */
+      --transition-fast: 0.2s ease;
+      --transition-base: 0.3s ease;
+      --transition-slow: 0.4s ease;
+      --transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    /* Dark mode variables */
+    [data-theme="dark"] {
+      --color-bg-primary: #121212;
+      --color-bg-secondary: #1e1e1e;
+      --color-text-primary: #e0e0e0;
+      --color-text-secondary: #a0a0a0;
+      --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.6);
+      --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.8);
+    }
+    
+    /* Reset and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+    
+    body {
+      font-family: var(--font-family-sans);
+      font-size: var(--font-size-base);
+      line-height: 1.6;
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    img, video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-base);
+    }
+    
+    ul, ol {
+      list-style: none;
+    }
+    
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+    
+    /* Focus styles for accessibility */
+    *:focus-visible {
+      outline: 2px solid var(--color-accent-400);
+      outline-offset: 2px;
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--color-primary-900);
+      color: var(--color-text-light);
+      padding: 8px;
+      text-decoration: none;
+      border-radius: var(--border-radius-sm);
+      z-index: 9999;
+      transition: var(--transition-base);
+    }
+    
+    .skip-link:focus {
+      top: 6px;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 var(--space-sm);
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .grid {
+      display: grid;
+      gap: var(--space-lg);
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    /* Button Components */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-sm) var(--space-lg);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-semibold);
+      border-radius: var(--border-radius-md);
+      transition: var(--transition-base);
+      position: relative;
+      overflow: hidden;
+      min-height: 44px; /* Accessibility: minimum touch target */
+      min-width: 44px;
+    }
+    
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    .btn-primary {
+      background: var(--color-primary-900);
+      color: var(--color-text-light);
+      box-shadow: var(--shadow-medium);
+    }
+    
+    .btn-primary:hover:not(:disabled),
+    .btn-primary:focus:not(:disabled) {
+      background: var(--color-secondary-500);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-heavy);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--color-primary-900);
+      color: var(--color-primary-900);
+    }
+    
+    .btn-outline:hover:not(:disabled),
+    .btn-outline:focus:not(:disabled) {
+      background: var(--color-primary-900);
+      color: var(--color-text-light);
+      transform: translateY(-2px);
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    
+    /* Card Components */
+    .card {
+      background: var(--color-bg-secondary);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-light);
+      transition: var(--transition-base);
+      overflow: hidden;
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-heavy);
+    }
+    
+    .card-content {
+      padding: var(--space-lg);
+    }
+    
+    .card-header {
+      padding: var(--space-lg) var(--space-lg) 0;
+    }
+    
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: var(--transition-base);
+    }
+    
+    [data-theme="dark"] .header {
+      background: rgba(18, 18, 18, 0.95);
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-sm) 0;
+      min-height: 70px;
+    }
+    
+    .logo {
+      font-family: var(--font-family-serif);
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary-900);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+    
+    .nav-link {
+      position: relative;
+      font-weight: var(--font-weight-regular);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--border-radius-sm);
+      transition: var(--transition-base);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--color-secondary-500);
+      transition: var(--transition-base);
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+      width: 100%;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--color-secondary-500);
+    }
+    
+    /* Hamburger menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      padding: var(--space-xs);
+      border-radius: var(--border-radius-sm);
+    }
+    
+    .hamburger-line {
+      width: 25px;
+      height: 3px;
+      background: var(--color-primary-900);
+      transition: var(--transition-base);
+      border-radius: 2px;
+    }
+    
+    .hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Theme toggle */
+    .theme-toggle {
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-primary-900);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: var(--font-size-lg);
+      transition: var(--transition-base);
+    }
+    
+    .theme-toggle:hover,
+    .theme-toggle:focus {
+      background: var(--color-primary-900);
+      color: var(--color-text-light);
+      transform: scale(1.1);
+    }
+    
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-secondary-500) 100%);
+      color: var(--color-text-light);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="none"><path d="M0 600L50 550C100 500 200 400 300 350C400 300 500 300 600 325C700 350 800 400 900 425C1000 450 1100 450 1150 450L1200 450V600H1150C1100 600 1000 600 900 600C800 600 700 600 600 600C500 600 400 600 300 600C200 600 100 600 50 600H0Z" fill="rgba(255,255,255,0.1)"/></svg>') no-repeat bottom center/cover;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin-left: var(--space-2xl);
+    }
+    
+    .hero-title {
+      font-family: var(--font-family-serif);
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-md);
+      line-height: 1.2;
+    }
+    
+    .hero-description {
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--space-xl);
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+    
+    .hero-media {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+    
+    .section {
+      padding: var(--space-3xl) 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-2xl);
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: var(--font-size-2xl);
+      font-family: var(--font-family-serif);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary-900);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .section-title::after {
+      content: '';
+      width: 100px;
+      height: 4px;
+      background: var(--color-accent-400);
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    .section-description {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: var(--font-size-lg);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-2xl);
+    }
+    
+    .feature-card {
+      background: var(--color-bg-secondary);
+      padding: var(--space-xl);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-light);
+      transition: var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-secondary-500), var(--color-accent-400));
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-heavy);
+    }
+    
+    .feature-card h3 {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-secondary-500);
+      margin-bottom: var(--space-md);
+    }
+    
+    .feature-card p {
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+    }
+    
+    .feature-card a {
+      color: var(--color-primary-900);
+      font-weight: var(--font-weight-semibold);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: var(--transition-base);
+    }
+    
+    .feature-card a:hover,
+    .feature-card a:focus {
+      text-decoration-color: var(--color-primary-900);
+    }
+    
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-base);
+      z-index: 2000;
+    }
+    
+    .modal.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal-content {
+      background: var(--color-bg-secondary);
+      border-radius: var(--border-radius-xl);
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: var(--space-xl);
+      position: relative;
+      transform: scale(0.9);
+      transition: var(--transition-bounce);
+    }
+    
+    .modal.show .modal-content {
+      transform: scale(1);
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: var(--space-lg);
+      right: var(--space-lg);
+      font-size: var(--font-size-xl);
+      background: none;
+      color: var(--color-text-secondary);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      transition: var(--transition-base);
+    }
+    
+    .modal-close:hover,
+    .modal-close:focus {
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+    }
+    
+    .footer {
+      background: var(--color-primary-900);
+      color: var(--color-text-light);
+      padding: var(--space-3xl) 0 var(--space-lg);
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+    
+    .footer-col h4 {
+      font-family: var(--font-family-serif);
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--space-md);
+      color: var(--color-accent-400);
+    }
+    
+    .footer-col p {
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+    
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    
+    .footer-col a {
+      opacity: 0.8;
+      transition: var(--transition-base);
+    }
+    
+    .footer-col a:hover,
+    .footer-col a:focus {
+      opacity: 1;
+      color: var(--color-accent-400);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+    
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      font-size: var(--font-size-lg);
+      transition: var(--transition-bounce);
+    }
+    
+    .social-icon:hover,
+    .social-icon:focus {
+      background: var(--color-accent-400);
+      color: var(--color-primary-900);
+      transform: scale(1.1);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-lg);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.6;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0, 0, 0);
+      }
+      40%, 43% {
+        transform: translate3d(0, -30px, 0);
+      }
+      70% {
+        transform: translate3d(0, -15px, 0);
+      }
+      90% {
+        transform: translate3d(0, -4px, 0);
+      }
+    }
+    
+    /* Animation classes */
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .animate-fade-in-down {
+      animation: fadeInDown 0.8s ease forwards;
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    .animate-slide-in-left {
+      animation: slideInLeft 0.8s ease forwards;
+    }
+    
+    .animate-bounce {
+      animation: bounce 2s infinite;
+    }
+    
+    /* Initial states for animations */
+    [data-animate]:not(.animate-in) {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    [data-animate].animate-in {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s ease;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-bg-secondary);
+        flex-direction: column;
+        padding: var(--space-lg);
+        box-shadow: var(--shadow-medium);
+        border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-base);
+      }
+      
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+      
+      .hero-content {
+        margin-left: 0;
+        text-align: center;
+      }
+      
+      .hero-media {
+        width: 100%;
+        opacity: 0.2;
+      }
+      
+      .btn-group {
+        justify-content: center;
+      }
+      
+      .features {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        width: 95%;
+        padding: 0 var(--space-xs);
+      }
+      
+      .hero-title {
+        font-size: var(--font-size-2xl);
+      }
+      
+      .hero-description {
+        font-size: var(--font-size-base);
+      }
+      
+      .section {
+        padding: var(--space-2xl) 0;
+      }
+      
+      .feature-card {
+        padding: var(--space-lg);
+      }
+    }
+    
+    .preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--color-bg-primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: var(--transition-slow);
+    }
+    
+    .preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .preloader-content {
+      text-align: center;
+    }
+    
+    .preloader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid var(--color-bg-primary);
+      border-top: 4px solid var(--color-secondary-500);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto var(--space-md);
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .preloader-text {
+      font-size: var(--font-size-lg);
+      color: var(--color-secondary-500);
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-primary-900);
+      border-radius: var(--border-radius-md);
+      padding: var(--space-md) var(--space-lg);
+      box-shadow: var(--shadow-heavy);
+      z-index: 3000;
+      transform: translateX(100%);
+      transition: var(--transition-base);
+    }
+    
+    .toast.show {
+      transform: translateX(0);
+    }
+    
+    .toast.toast-error {
+      border-color: var(--color-secondary-500);
+      background: #fee;
+    }
+    
+    .toast.toast-success {
+      border-color: #22c55e;
+      background: #efe;
+    }
+    
+    .toast-fadeout {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Preloader -->
+  <div id="preloader" class="preloader" role="status" aria-label="Loading">
+    <div class="preloader-content">
+      <div class="preloader-spinner"></div>
+      <div class="preloader-text">Loading Portfolio...</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <nav class="nav container" role="navigation" aria-label="Main navigation">
+      <a href="#hero" class="logo" aria-label="PESE 610 Home">PESE 610</a>
+      
+      <div class="nav-links" id="navLinks" role="menubar">
+        <a href="#hero" class="nav-link" role="menuitem">Home</a>
+        <a href="#overview" class="nav-link" role="menuitem">Overview</a>
+        <a href="#activities" class="nav-link" role="menuitem">Activities</a>
+        
+        <button 
+          class="theme-toggle" 
+          id="themeToggle" 
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode">
+          🌙
+        </button>
+      </div>
+      
+      <button 
+        class="hamburger" 
+        id="hamburger" 
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <section id="hero" class="hero" role="banner" style="padding: 20px;">
+  <div class="hero-media" aria-hidden="true">
+    <video 
+      class="hero-video" 
+      autoplay 
+      muted 
+      loop 
+      poster="https://via.placeholder.com/1920x1080/0b1f3b/ffffff?text=Hero+Background"
+      preload="metadata"
+      style="width: 100%; height: auto; display: block;"
+    >
+      <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  
+  <div class="hero-content container" 
+    style="
+      display: flex; 
+      flex-wrap: wrap; 
+      align-items: flex-start; 
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    "
+  >
+    <!-- Text Content -->
+    <div style="flex: 1 1 400px; min-width: 280px;">
+      <h1 class="hero-title" data-animate style="margin-top: 0;">
+        Welcome to Your Professional E-Portfolio
+      </h1>
+      <p class="hero-description" data-animate>
+        Showcase your skills, assignments, presentations, and achievements in a beautifully crafted digital space designed for excellence.
+      </p>
+      
+      <div class="btn-group" data-animate style="margin-top: 20px;">
+        <button class="btn btn-primary" onclick="scrollToSection('activities')">
+          Explore Activities
+        </button>
+        <button class="btn btn-outline" onclick="scrollToSection('contact')">
+          Contact Instructor
+        </button>
+      </div>
+    </div>
+
+    <!-- Video Embed -->
+    <div style="
+      flex: 1 1 400px; 
+      min-width: 680px;
+      max-width: 600px;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      flex-grow: 0;
+    ">
+      <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        title="Embedded Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        style="display: block;"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Overview Section -->
+    <section id="overview" class="section" role="region" aria-labelledby="overview-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="overview-title">Course Overview</h2>
+        </div>
+        <div class="section-description">
+          <p>
+            This comprehensive e-portfolio platform is expertly designed to deliver an immersive learning experience, 
+            integrating modern web technologies, accessibility features, and responsive design to showcase your 
+            professional development journey in PESE 610.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="section" role="region" aria-labelledby="activities-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="activities-title">Activities & Tasks</h2>
+        </div>
+        
+        <div class="features" role="list">
+          <article class="feature-card" role="listitem" data-animate>
+            <header class="card-header">
+              <h3>Self Introduction</h3>
+            </header>
+            <div class="card-content">
+              <p>
+                Prepare comprehensive checklists, record engaging presentations, and receive constructive feedback 
+                to enhance your communication skills.
+                <a href="#" onclick="openModal('self-intro-modal')" aria-describedby="self-intro-desc">
+                  Learn more →
+                </a>
+              </p>
+              <div id="self-intro-desc" class="sr-only">
+                Detailed information about self introduction activities and requirements
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-card" role="listitem" data-animate>
+            <header class="card-header">
+              <h3>Public Speaking</h3>
+            </header>
+            <div class="card-content">
+              <p>
+                Engage in extempore speeches, JAM (Just A Minute) sessions, storytelling workshops, 
+                and product pitch presentations to build confidence.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card" role="listitem" data-animate>
+            <header class="card-header">
+              <h3>Writing Skills</h3>
+            </header>
+            <div class="card-content">
+              <p>
+                Master advanced essay writing techniques, analyze professional samples, 
+                and practice with our integrated writing system.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card" role="listitem" data-animate>
+            <header class="card-header">
+              <h3>Journaling</h3>
+            </header>
+            <div class="card-content">
+              <p>
+                Maintain both professional and personal journals with guided daily prompts 
+                to enhance self-reflection and growth.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card" role="listitem" data-animate>
+            <header class="card-header">
+              <h3>Flash Cards</h3>
+            </header>
+            <div class="card-content">
+              <p>
+                Create, share, and exchange interactive flash cards on key topics 
+                to reinforce learning and collaboration.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card" role="listitem" data-animate>
+            <header class="card-header">
+              <h3>Group Discussions</h3>
+            </header>
+            <div class="card-content">
+              <p>
+                Participate in dynamic group discussion sessions, structured debates, 
+                and collaborative problem-solving activities.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card" role="listitem" data-animate>
+            <header class="card-header">
+              <h3>Interview Practice</h3>
+            </header>
+            <div class="card-content">
+              <p>
+                Record practice interviews, review peer feedback, and polish your responses 
+                with professional guidance and assessment.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card" role="listitem" data-animate>
+            <header class="card-header">
+              <h3>Assessments</h3>
+            </header>
+            <div class="card-content">
+              <p>
+                Complete comprehensive assessments: Write-ups (12 points), Resume (8 points), 
+                Interviews (20 points), and Group Discussions (10 points).
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>About</h4>
+          <p>
+            Expertly crafted e-portfolio platform for PESE 610, designed with modern web standards, 
+            accessibility features, and performance optimization.
+          </p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+              🔗
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter" title="Twitter">
+              🐦
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
+              📸
+            </a>
+            <a href="#" class="social-icon" aria-label="Email" title="Email">
+              ✉️
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#" onclick="showToast('Privacy policy coming soon')">Privacy Policy</a></li>
+            <li><a href="#" onclick="showToast('Terms of use coming soon')">Terms of Use</a></li>
+            <li><a href="#" onclick="showToast('Accessibility statement available')">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 PESE 610 Professional E-Portfolio • All Rights Reserved • Built with Modern Web Standards</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Template -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      <h3 id="modal-title">Modal Title</h3>
+      <div id="modal-body">Modal content will be loaded here.</div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // App State Management
+    class AppState {
+      constructor() {
+        this.theme = localStorage.getItem('theme') || 'light';
+        this.animations = [];
+        this.modals = new Map();
+        this.init();
+      }
+
+      init() {
+        this.setTheme(this.theme);
+        this.setupEventListeners();
+        this.initializeComponents();
+        this.setupAccessibility();
+      }
+
+      setTheme(theme) {
+        this.theme = theme;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        this.updateThemeToggle();
+      }
+
+      toggleTheme() {
+        const newTheme = this.theme === 'light' ? 'dark' : 'light';
+        this.setTheme(newTheme);
+        showToast(`Switched to ${newTheme} mode`, 'success');
+      }
+
+      updateThemeToggle() {
+        const toggle = document.getElementById('themeToggle');
+        if (toggle) {
+          toggle.textContent = this.theme === 'light' ? '🌙' : '☀️';
+          toggle.setAttribute('aria-label', `Switch to ${this.theme === 'light' ? 'dark' : 'light'} mode`);
+        }
+      }
+
+      setupEventListeners() {
+        // Preloader
+        window.addEventListener('load', () => this.hidePreloader());
+        
+        // Navigation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (hamburger && navLinks) {
+          hamburger.addEventListener('click', () => this.toggleNavigation());
+        }
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) {
+              this.smoothScrollTo(target);
+            }
+          });
+        });
+
+        // Close navigation on escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            this.closeNavigation();
+            this.closeModal();
+          }
+        });
+
+        // Close modal on outside click
+        document.getElementById('modal')?.addEventListener('click', (e) => {
+          if (e.target.classList.contains('modal')) {
+            this.closeModal();
+          }
+        });
+      }
+
+      initializeComponents() {
+        this.setupIntersectionObserver();
+        this.setupLazyLoading();
+        this.preloadCriticalResources();
+      }
+
+      setupAccessibility() {
+        // Focus management
+        this.setupFocusManagement();
+        
+        // Keyboard navigation
+        this.setupKeyboardNavigation();
+        
+        // Screen reader announcements
+        this.setupScreenReaderSupport();
+      }
+
+      hidePreloader() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.classList.add('hide');
+          setTimeout(() => {
+            preloader.remove();
+            // Trigger initial animations
+            this.triggerInitialAnimations();
+          }, 500);
+        }
+      }
+
+      triggerInitialAnimations() {
+        const animatedElements = document.querySelectorAll('[data-animate]');
+        animatedElements.forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add('animate-in');
+          }, index * 100);
+        });
+      }
+
+      toggleNavigation() {
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (!hamburger || !navLinks) return;
+
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        
+        navLinks.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', !isExpanded);
+        
+        // Focus management
+        if (!isExpanded) {
+          navLinks.querySelector('.nav-link')?.focus();
+        }
+      }
+
+      closeNavigation() {
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (hamburger && navLinks) {
+          navLinks.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      }
+
+      smoothScrollTo(target) {
+        const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+        const targetPosition = target.offsetTop - headerHeight - 20;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+
+      setupIntersectionObserver() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Observe all animation targets
+        const animationTargets = document.querySelectorAll('[data-animate]:not(.animate-in)');
+        animationTargets.forEach(target => observer.observe(target));
+      }
+
+      setupLazyLoading() {
+        const lazyElements = document.querySelectorAll('[data-src]');
+        
+        if ('IntersectionObserver' in window) {
+          const lazyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const element = entry.target;
+                
+                if (element.tagName === 'IMG') {
+                  element.src = element.dataset.src;
+                  element.removeAttribute('data-src');
+                } else if (element.tagName === 'VIDEO') {
+                  element.src = element.dataset.src;
+                  element.removeAttribute('data-src');
+                }
+                
+                lazyObserver.unobserve(element);
+              }
+            });
+          });
+
+          lazyElements.forEach(element => lazyObserver.observe(element));
+        }
+      }
+
+      preloadCriticalResources() {
+        // Preload hero video poster
+        const heroVideo = document.querySelector('.hero-video');
+        if (heroVideo && heroVideo.poster) {
+          const img = new Image();
+          img.src = heroVideo.poster;
+        }
+      }
+
+      setupFocusManagement() {
+        // Focus trap for modals
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Tab') {
+            const modal = document.querySelector('.modal.show');
+            if (modal) {
+              this.trapFocus(e, modal);
+            }
+          }
+        });
+      }
+
+      trapFocus(e, container) {
+        const focusableElements = container.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          lastElement.focus();
+          e.preventDefault();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          firstElement.focus();
+          e.preventDefault();
+        }
+      }
+
+      setupKeyboardNavigation() {
+        // Enhanced keyboard support
+        document.addEventListener('keydown', (e) => {
+          // Close modals with Escape
+          if (e.key === 'Escape') {
+            this.closeModal();
+            this.closeNavigation();
+          }
+          
+          // Navigate with arrow keys in navigation
+          if (e.target.closest('.nav-links')) {
+            this.handleNavKeyboard(e);
+          }
+        });
+      }
+
+      handleNavKeyboard(e) {
+        const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+        const currentIndex = navLinks.indexOf(e.target);
+        
+        switch (e.key) {
+          case 'ArrowDown':
+          case 'ArrowRight':
+            e.preventDefault();
+            const nextIndex = (currentIndex + 1) % navLinks.length;
+            navLinks[nextIndex].focus();
+            break;
+          case 'ArrowUp':
+          case 'ArrowLeft':
+            e.preventDefault();
+            const prevIndex = currentIndex > 0 ? currentIndex - 1 : navLinks.length - 1;
+            navLinks[prevIndex].focus();
+            break;
+        }
+      }
+
+      setupScreenReaderSupport() {
+        // Live region for dynamic updates
+        const liveRegion = document.createElement('div');
+        liveRegion.setAttribute('aria-live', 'polite');
+        liveRegion.setAttribute('aria-atomic', 'true');
+        liveRegion.className = 'sr-only';
+        liveRegion.id = 'live-region';
+        document.body.appendChild(liveRegion);
+      }
+
+      announceToScreenReader(message) {
+        const liveRegion = document.getElementById('live-region');
+        if (liveRegion) {
+          liveRegion.textContent = message;
+          setTimeout(() => {
+            liveRegion.textContent = '';
+          }, 1000);
+        }
+      }
+
+      openModal(modalId, content = {}) {
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        
+        if (!modal) return;
+
+        // Set content
+        modalTitle.textContent = content.title || 'Information';
+        modalBody.innerHTML = content.body || '<p>Content loading...</p>';
+        
+        // Show modal
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+        
+        // Focus management
+        const closeButton = modal.querySelector('.modal-close');
+        if (closeButton) {
+          closeButton.focus();
+        }
+        
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+        
+        this.announceToScreenReader('Modal opened');
+      }
+
+      closeModal() {
+        const modal = document.getElementById('modal');
+        if (!modal) return;
+
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+        
+        // Restore body scroll
+        document.body.style.overflow = '';
+        
+        this.announceToScreenReader('Modal closed');
+      }
+    }
+
+    // Utility Functions
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        app.smoothScrollTo(section);
+      }
+    }
+
+    function openModal(modalId) {
+      const modalContent = {
+        'self-intro-modal': {
+          title: 'Self Introduction Activity',
+          body: `
+            <div style="line-height: 1.6;">
+              <h4>Activity Overview</h4>
+              <p>The self-introduction activity is designed to help you build confidence in presenting yourself professionally.</p>
+              
+              <h4>Requirements</h4>
+              <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li>Prepare a 2-3 minute introduction</li>
+                <li>Include educational background</li>
+                <li>Mention career goals and aspirations</li>
+                <li>Practice delivery and timing</li>
+              </ul>
+              
+              <h4>Assessment Criteria</h4>
+              <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li>Clarity of speech (25%)</li>
+                <li>Content organization (30%)</li>
+                <li>Confidence and presence (25%)</li>
+                <li>Time management (20%)</li>
+              </ul>
+            </div>
+          `
+        }
+      };
+      
+      const content = modalContent[modalId] || { title: 'Information', body: '<p>Content not available.</p>' };
+      app.openModal(modalId, content);
+    }
+
+    function closeModal() {
+      app.closeModal();
+    }
+
+    function showToast(message, type = 'info') {
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      toast.textContent = message;
+      toast.setAttribute('role', 'alert');
+      toast.setAttribute('aria-live', 'assertive');
+      
+      document.body.appendChild(toast);
+      
+      // Show toast
+      requestAnimationFrame(() => {
+        toast.classList.add('show');
+      });
+      
+      // Auto hide after 5 seconds
+      setTimeout(() => {
+        toast.classList.add('toast-fadeout');
+        setTimeout(() => {
+          if (toast.parentNode) {
+            toast.parentNode.removeChild(toast);
+          }
+        }, 300);
+      }, 5000);
+    }
+
+    // Form Validation Utilities
+    function validateForm(formData) {
+      const errors = [];
+      
+      if (!formData.get('name')?.trim()) {
+        errors.push({ field: 'name', message: 'Name is required' });
+      }
+      
+      if (!formData.get('email')?.includes('@')) {
+        errors.push({ field: 'email', message: 'Valid email is required' });
+      }
+      
+      return errors;
+    }
+
+    function handleFormSubmit(formElement) {
+      const formData = new FormData(formElement);
+      const errors = validateForm(formData);
+      
+      if (errors.length > 0) {
+        errors.forEach(error => {
+          showToast(error.message, 'error');
+        });
+        return false;
+      }
+      
+      showToast('Form submitted successfully!', 'success');
+      return true;
+    }
+
+    // Error Handling
+    window.addEventListener('error', (e) => {
+      console.error('Application error:', e.error);
+      showToast('An unexpected error occurred. Please refresh the page.', 'error');
+    });
+
+    window.addEventListener('unhandledrejection', (e) => {
+      console.error('Unhandled promise rejection:', e.reason);
+      showToast('A network error occurred. Please check your connection.', 'error');
+    });
+
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+
+    // Initialize Application
+    let app;
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        app = new AppState();
+        console.log('PESE 610 E-Portfolio initialized successfully');
+      } catch (error) {
+        console.error('Failed to initialize application:', error);
+        showToast('Application failed to initialize. Please refresh the page.', 'error');
+      }
+    });
+
+    // Performance Monitoring
+    if ('PerformanceObserver' in window) {
+      const observer = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (entry.entryType === 'largest-contentful-paint') {
+            console.log('LCP:', entry.startTime);
+          }
+        }
+      });
+      
+      observer.observe({type: 'largest-contentful-paint', buffered: true});
+    }
+  </script>
+</body>
+</html>
