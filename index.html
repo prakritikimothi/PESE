@@ -915,6 +915,133 @@
 </head>
 
 <body>
+
+  <!-- 🔒 AUTH LOCK SCREEN -->
+  <div id="authOverlay">
+    <div id="authBox">
+      <h1>🔐 Access Restricted</h1>
+      <p class="question">What am I getting for this answer in WhatsApp?</p>
+      <input type="password" id="authInput" placeholder="Enter answer..." />
+      <button onclick="checkPassword()">Unlock</button>
+      <p id="authMessage"></p>
+    </div>
+  </div>
+
+  <style>
+    /* Lock Screen Styles */
+    #authOverlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1.2s ease-out forwards;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f0f0f0;
+    }
+
+    #authBox {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      text-align: center;
+      animation: zoomIn 0.7s ease-out forwards;
+      max-width: 90%;
+    }
+
+    #authBox h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #ff4d4f;
+    }
+
+    .question {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    #authBox input {
+      padding: 12px 15px;
+      width: 100%;
+      max-width: 300px;
+      font-size: 16px;
+      border: 1px solid #555;
+      background: #222;
+      color: #fff;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      transition: border-color 0.3s;
+    }
+
+    #authBox input:focus {
+      border-color: #ff4d4f;
+      outline: none;
+    }
+
+    #authBox button {
+      padding: 10px 25px;
+      font-size: 15px;
+      background: #ff4d4f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #authBox button:hover {
+      background: #e84142;
+    }
+
+    #authMessage {
+      color: #ff8080;
+      margin-top: 15px;
+      font-size: 14px;
+      min-height: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0.85);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('authInput').value.trim();
+      const message = document.getElementById('authMessage');
+
+      if (input.toLowerCase() === 'pranjal') {
+        document.getElementById('authOverlay').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('authOverlay').style.display = 'none';
+        }, 600);
+      } else {
+        message.innerText = '❌ Incorrect. Access denied.';
+      }
+    }
+  </script>
+
+
+
   <!-- Skip to main content link for accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
