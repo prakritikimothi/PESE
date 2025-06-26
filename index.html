@@ -277,7 +277,6 @@
     }
     
     .header {
-      position: fixed;
       top: 0;
       width: 100%;
       background: rgba(255, 255, 255, 0.95);
@@ -307,6 +306,9 @@
       font-weight: var(--font-weight-bold);
       color: var(--color-primary-900);
       text-decoration: none;
+    }
+    [data-theme="dark"] .logo {
+      color: #fff;
     }
     
     .nav-links {
@@ -467,6 +469,9 @@
       color: var(--color-primary-900);
       margin-bottom: var(--space-sm);
     }
+    [data-theme="dark"] .section-title h2 {
+      color: #fff;
+    }
     
     .section-title::after {
       content: '';
@@ -538,6 +543,9 @@
       text-decoration: underline;
       text-decoration-color: transparent;
       transition: var(--transition-base);
+    }
+    [data-theme="dark"] .feature-card a {
+      color: #fff;
     }
     
     .feature-card a:hover,
@@ -915,133 +923,6 @@
 </head>
 
 <body>
-
-  <!-- 🔒 AUTH LOCK SCREEN -->
-  <div id="authOverlay">
-    <div id="authBox">
-      <h1>🔐 Access Restricted</h1>
-      <p class="question">What am I getting for this answer in WhatsApp?</p>
-      <input type="password" id="authInput" placeholder="Enter answer..." />
-      <button onclick="checkPassword()">Unlock</button>
-      <p id="authMessage"></p>
-    </div>
-  </div>
-
-  <style>
-    /* Lock Screen Styles */
-    #authOverlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(6px);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 1.2s ease-out forwards;
-      font-family: 'Segoe UI', sans-serif;
-      color: #f0f0f0;
-    }
-
-    #authBox {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-      text-align: center;
-      animation: zoomIn 0.7s ease-out forwards;
-      max-width: 90%;
-    }
-
-    #authBox h1 {
-      margin-bottom: 20px;
-      font-size: 28px;
-      color: #ff4d4f;
-    }
-
-    .question {
-      font-size: 16px;
-      margin-bottom: 20px;
-      color: #ccc;
-    }
-
-    #authBox input {
-      padding: 12px 15px;
-      width: 100%;
-      max-width: 300px;
-      font-size: 16px;
-      border: 1px solid #555;
-      background: #222;
-      color: #fff;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      transition: border-color 0.3s;
-    }
-
-    #authBox input:focus {
-      border-color: #ff4d4f;
-      outline: none;
-    }
-
-    #authBox button {
-      padding: 10px 25px;
-      font-size: 15px;
-      background: #ff4d4f;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    #authBox button:hover {
-      background: #e84142;
-    }
-
-    #authMessage {
-      color: #ff8080;
-      margin-top: 15px;
-      font-size: 14px;
-      min-height: 20px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes zoomIn {
-      0% {
-        transform: scale(0.85);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-  </style>
-
-  <script>
-    function checkPassword() {
-      const input = document.getElementById('authInput').value.trim();
-      const message = document.getElementById('authMessage');
-
-      if (input.toLowerCase() === 'pranjal') {
-        document.getElementById('authOverlay').style.opacity = '0';
-        setTimeout(() => {
-          document.getElementById('authOverlay').style.display = 'none';
-        }, 600);
-      } else {
-        message.innerText = '❌ Incorrect. Access denied.';
-      }
-    }
-  </script>
-
-
-
   <!-- Skip to main content link for accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -1087,92 +968,313 @@
 
   <!-- Main Content -->
   <main id="main-content">
-    <section id="hero" class="hero" role="banner" style="padding: 20px;">
-  <div class="hero-media" aria-hidden="true">
-    <video 
-      class="hero-video" 
-      autoplay 
-      muted 
-      loop 
-      poster="https://via.placeholder.com/1920x1080/0b1f3b/ffffff?text=Hero+Background"
-      preload="metadata"
-      style="width: 100%; height: auto; display: block;"
-    >
-      <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  
-  <div class="hero-content container" 
-    style="
-      display: flex; 
-      flex-wrap: wrap; 
-      align-items: flex-start; 
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    "
-  >
-    <!-- Text Content -->
-    <div style="flex: 1 1 400px; min-width: 280px;">
-      <h1 class="hero-title" data-animate style="margin-top: 0;">
-        Welcome to Your Professional E-Portfolio
-      </h1>
-      <p class="hero-description" data-animate>
-        Showcase your skills, assignments, presentations, and achievements in a beautifully crafted digital space designed for excellence.
-      </p>
-      
-      <div class="btn-group" data-animate style="margin-top: 20px;">
-        <button class="btn btn-primary" onclick="scrollToSection('activities')">
-          Explore Activities
-        </button>
-        <button class="btn btn-outline" onclick="scrollToSection('contact')">
-          Contact Instructor
-        </button>
-      </div>
-    </div>
+    <section id="hero" role="banner" style="position: relative; background-color: #8B0000; color: #fff; min-height: 600px; display: flex; align-items: center; justify-content: center; padding: 60px 20px; overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 
-    <!-- Video Embed -->
-    <div style="
-      flex: 1 1 400px; 
-      min-width: 680px;
-      max-width: 600px;
-      aspect-ratio: 16 / 9;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      flex-grow: 0;
-    ">
-      <iframe 
-        width="100%" 
-        height="100%" 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-        title="Embedded Video" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen
-        style="display: block;"
-      ></iframe>
-    </div>
-  </div>
-</section>
+      <!-- Content Wrapper -->
+      <div style="position: relative; z-index: 1; max-width: 1100px; width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
 
-
-    <!-- Overview Section -->
-    <section id="overview" class="section" role="region" aria-labelledby="overview-title">
-      <div class="container">
-        <div class="section-title">
-          <h2 id="overview-title">Course Overview</h2>
-        </div>
-        <div class="section-description">
-          <p>
-            This comprehensive e-portfolio platform is expertly designed to deliver an immersive learning experience, 
-            integrating modern web technologies, accessibility features, and responsive design to showcase your 
-            professional development journey in PESE 610.
+        <!-- Left Text Block -->
+        <div style="flex: 1 1 400px; min-width: 320px; max-width: 550px;">
+          <h1 style="
+            font-weight: 900;
+            font-size: 3.6rem;
+            margin: 0 0 24px 0;
+            letter-spacing: 0.03em;
+            text-shadow: 0 5px 18px rgba(0,0,0,0.85);
+            line-height: 1.1;
+            color: #FFDEDE;
+          ">
+            Welcome to my E-Portfolio
+          </h1>
+          <p style="
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: #FFD8D8;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+            max-width: 460px;
+            line-height: 1.65;
+            letter-spacing: 0.01em;
+          ">
+            I’m proud to showcase the skills, assignments, presentations, and achievements I gained through the PESE subject, all brought together on this platform that reflects the depth and quality of my learning.
           </p>
+
+          <div style="margin-top: 42px; display: flex; gap: 24px; flex-wrap: wrap;">
+            <button onclick="scrollToSection('activities')" style="
+              background: linear-gradient(145deg, #ffd6dc, #ffb2ba);
+              color: #800000;
+              font-weight: 700;
+              font-size: 1.15rem;
+              padding: 16px 40px;
+              border: none;
+              border-radius: 36px;
+              cursor: pointer;
+              box-shadow: 0 8px 30px rgba(255, 180, 185, 0.7);
+              transition: all 0.3s ease;
+              letter-spacing: 0.02em;
+            "
+              onmouseenter="this.style.background='linear-gradient(145deg, #ff8a96, #ff5c64)'; this.style.boxShadow='0 10px 45px rgba(255, 100, 110, 0.9)';"
+              onmouseleave="this.style.background='linear-gradient(145deg, #ffd6dc, #ffb2ba)'; this.style.boxShadow='0 8px 30px rgba(255, 180, 185, 0.7)';"
+            >
+              Explore Activities
+            </button>
+
+            <button onclick="scrollToSection('contact')" style="
+              background: transparent;
+              border: 3px solid #ffb2ba;
+              color: #ffb2ba;
+              font-weight: 700;
+              font-size: 1.15rem;
+              padding: 14px 38px;
+              border-radius: 36px;
+              cursor: pointer;
+              box-shadow: 0 6px 22px rgba(255, 178, 186, 0.5);
+              transition: all 0.3s ease;
+              letter-spacing: 0.02em;
+            "
+              onmouseenter="this.style.background='rgba(255,178,186,0.18)'; this.style.color='#800000'; this.style.boxShadow='0 9px 35px rgba(255,120,140,0.85)';"
+              onmouseleave="this.style.background='transparent'; this.style.color='#ffb2ba'; this.style.boxShadow='0 6px 22px rgba(255,178,186,0.5)';"
+            >
+              Contact Instructor
+            </button>
+          </div>
+        </div>
+
+        <!-- Glassmorphic Typing Area -->
+        <div id="typing-container" style="
+          flex: 1 1 320px;
+          min-width: 620px;
+          max-width: 480px;
+          padding: 14px 28px;
+          border-radius: 54px;
+          backdrop-filter: blur(30px);
+          -webkit-backdrop-filter: blur(30px);
+          background: rgba(255 255 255 / 0);
+          box-shadow:
+            0 12px 80px rgba(255 255 255 / 0.22),
+            inset 0 0 80px rgba(255 255 255 / 0.12);
+          position: relative;
+          overflow: hidden;
+          user-select: none;
+          cursor: default;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 120px;
+          color: #FFECEC;
+          font-weight: 900;
+          font-size: 2.5rem;
+          letter-spacing: 0.08em;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          white-space: nowrap;
+          position: relative;
+        ">
+          <span id="typing-text" style="overflow: hidden; display: inline-block;"></span>
+          <!-- Custom blinking caret -->
+          <span id="caret" style="
+            display: inline-block;
+            width: 3px;
+            height: 70%;
+            margin-left: 6px;
+            background: linear-gradient(180deg, #fff 0%, #ffb2ba 100%);
+            border-radius: 2px;
+            animation: blink-caret 1.2s infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+          "></span>
+          <!-- subtle shimmer overlay -->
+          <div style="
+            position: absolute;
+            top: 0; left: -70%;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.18) 100%);
+            transform: skewX(-30deg);
+            animation: shimmer 4.5s infinite;
+            pointer-events: none;
+            border-radius: 54px;
+            z-index: 0;
+          "></div>
         </div>
       </div>
     </section>
+
+    <script>
+      const lines = [
+        "Prakriti Kimothi",
+        "Section: D1",
+        "Roll No: 46",
+        "Uni Roll No: 2219256"
+      ];
+
+      const typingEl = document.getElementById("typing-text");
+      const caret = document.getElementById("caret");
+      let currentLineIndex = 0;
+      let typingSpeed = 80; // ms per char
+      let deletingSpeed = 50; // ms per char
+      let pauseTime = 1800; // pause after full line typed
+
+      async function typeWriter(text) {
+        caret.style.opacity = '1'; // show caret
+        typingEl.textContent = '';
+        for (let i = 0; i < text.length; i++) {
+          typingEl.textContent += text.charAt(i);
+          await sleep(typingSpeed);
+        }
+        await sleep(pauseTime);
+      }
+
+      async function deleteWriter() {
+        for (let i = typingEl.textContent.length; i > 0; i--) {
+          typingEl.textContent = typingEl.textContent.slice(0, i - 1);
+          await sleep(deletingSpeed);
+        }
+        caret.style.opacity = '0'; // hide caret when done
+      }
+
+      async function runTypingAnimation() {
+        while (true) {
+          const line = lines[currentLineIndex];
+          await typeWriter(line);
+          await deleteWriter();
+          currentLineIndex = (currentLineIndex + 1) % lines.length;
+        }
+      }
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      runTypingAnimation();
+    </script>
+
+    <style>
+      @keyframes blink-caret {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      @keyframes shimmer {
+        0% { left: -70%; }
+        100% { left: 150%; }
+      }
+
+      @media (max-width: 768px) {
+        #hero > div {
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+      }
+    </style>
+
+
+
+    <!-- Overview Section -->
+    <section id="overview" role="region" aria-labelledby="overview-title" style="
+      background: #121826;
+      color: #E0F7FA;
+      font-family: 'Inter', sans-serif;
+      padding: 4rem 1.5rem;
+    ">
+      <div style="
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        align-items: center;
+        justify-content: space-between;
+      ">
+        <!-- Text content -->
+        <div style="flex: 1 1 500px; animation: fadeInUp 0.8s ease forwards; opacity: 0;">
+          <h2 id="overview-title" style="
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #4DD0E1;
+            margin-bottom: 1rem;
+            position: relative;
+            max-width: fit-content;
+          ">
+            PESE 610: A Transformative Learning Experience
+            <span style="
+              position: absolute;
+              bottom: -6px;
+              left: 0;
+              width: 50%;
+              height: 3px;
+              background: #4DD0E1;
+              border-radius: 3px;
+              display: block;
+            "></span>
+          </h2>
+          <p style="font-size: 1rem; line-height: 1.6; color: #B2EBF2; margin-bottom: 1rem;">
+            Dr. Anubha Pundir’s energetic teaching made PESE enjoyable. Activities like storytelling and public speaking kept us engaged.
+          </p>
+          <p style="font-size: 1rem; line-height: 1.6; color: #B2EBF2;">
+            Communication skills sharpened through presentations, journaling, and group discussions—all in a motivating environment.
+          </p>
+        </div>
+
+        <!-- Visual block -->
+        <div style="
+          flex: 1 1 350px;
+          background: linear-gradient(135deg, #4DD0E1, #00838F);
+          border-radius: 18px;
+          box-shadow: 0 8px 20px rgba(77, 208, 225, 0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          color: #E0F7FA;
+          font-weight: 600;
+          font-size: 1.2rem;
+          text-align: center;
+          animation: fadeIn 1s ease forwards;
+          opacity: 0;
+          min-height: 260px;
+          line-height: 1.4;
+        ">
+          “An inspiring journey that builds confidence and growth.”
+        </div>
+      </div>
+
+      <style>
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        @media (max-width: 768px) {
+          #overview > div {
+            flex-direction: column;
+            gap: 2rem;
+          }
+          #overview div:last-child {
+            min-height: 180px;
+          }
+          #overview h2 {
+            font-size: 1.8rem;
+          }
+          #overview p {
+            font-size: 0.95rem;
+          }
+        }
+      </style>
+    </section>
+
 
     <!-- Activities Section -->
     <section id="activities" class="section" role="region" aria-labelledby="activities-title">
