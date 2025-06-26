@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PESE 610 Professional E-Portfolio showcasing skills, assignments, and achievements">
-  <meta name="keywords" content="e-portfolio, professional development, PESE 610, skills showcase">
+  <meta name="description" content="PESE 610 E-Portfolio showcasing skills, assignments, and achievements">
+  <meta name="keywords" content="e-portfolio, PESE 610, skills showcase">
   <meta name="author" content="PESE 610 Student">
   <meta http-equiv="Content-Security-Policy" 
         content="default-src 'self'; 
@@ -13,7 +13,7 @@
                  script-src 'self' 'unsafe-inline'; 
                  img-src 'self' data: https:;">
   
-  <title>PESE 610 E-Portfolio - Professional Development Showcase</title>
+  <title>PESE 610 E-Portfolio - Development Showcase</title>
   
   <!-- Preload critical resources -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@400;700&display=swap" as="style">
@@ -1277,184 +1277,858 @@
 
 
     <!-- Activities Section -->
-    <section id="activities" class="section" role="region" aria-labelledby="activities-title">
-      <div class="container">
-        <div class="section-title">
-          <h2 id="activities-title">Activities & Tasks</h2>
-        </div>
-        
-        <div class="features" role="list">
-          <article class="feature-card" role="listitem" data-animate>
-            <header class="card-header">
-              <h3>Self Introduction</h3>
-            </header>
-            <div class="card-content">
-              <p>
-                Prepare comprehensive checklists, record engaging presentations, and receive constructive feedback 
-                to enhance your communication skills.
-                <a href="#" onclick="openModal('self-intro-modal')" aria-describedby="self-intro-desc">
-                  Learn more →
-                </a>
-              </p>
-              <div id="self-intro-desc" class="sr-only">
-                Detailed information about self introduction activities and requirements
-              </div>
-            </div>
-          </article>
+    <section id="activities" aria-labelledby="activities-title" style="padding:40px 20px; background: linear-gradient(135deg, #f0f4ff, #e0ecff); font-family: 'Segoe UI', sans-serif;">
 
-          <article class="feature-card" role="listitem" data-animate>
-            <header class="card-header">
-              <h3>Public Speaking</h3>
-            </header>
-            <div class="card-content">
-              <p>
-                Engage in extempore speeches, JAM (Just A Minute) sessions, storytelling workshops, 
-                and product pitch presentations to build confidence.
-              </p>
-            </div>
-          </article>
+      <style>
+        .section-title h2 {
+          text-align: center;
+          font-size: 2.8rem;
+          background: linear-gradient(90deg, #4f46e5, #06b6d4);
+          background-clip: border-box;
+          -webkit-background-clip: text;
+          color: transparent;
+          font-weight: 900;
+          margin-bottom: 40px;
+          letter-spacing: 0.05em;
+          user-select: none;
+        }
 
-          <article class="feature-card" role="listitem" data-animate>
-            <header class="card-header">
-              <h3>Writing Skills</h3>
-            </header>
-            <div class="card-content">
-              <p>
-                Master advanced essay writing techniques, analyze professional samples, 
-                and practice with our integrated writing system.
-              </p>
-            </div>
-          </article>
+        .features {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 30px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
 
-          <article class="feature-card" role="listitem" data-animate>
-            <header class="card-header">
-              <h3>Journaling</h3>
-            </header>
-            <div class="card-content">
-              <p>
-                Maintain both professional and personal journals with guided daily prompts 
-                to enhance self-reflection and growth.
-              </p>
-            </div>
-          </article>
+        .feature-card {
+          position: relative;
+          background: rgba(255, 255, 255, 0.75);
+          backdrop-filter: blur(14px);
+          border-radius: 24px;
+          padding: 24px;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
 
-          <article class="feature-card" role="listitem" data-animate>
-            <header class="card-header">
-              <h3>Flash Cards</h3>
-            </header>
-            <div class="card-content">
-              <p>
-                Create, share, and exchange interactive flash cards on key topics 
-                to reinforce learning and collaboration.
-              </p>
-            </div>
-          </article>
+        .feature-card:hover,
+        .feature-card:focus-within {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+          outline: none;
+        }
 
-          <article class="feature-card" role="listitem" data-animate>
-            <header class="card-header">
-              <h3>Group Discussions</h3>
-            </header>
-            <div class="card-content">
-              <p>
-                Participate in dynamic group discussion sessions, structured debates, 
-                and collaborative problem-solving activities.
-              </p>
-            </div>
-          </article>
+        .feature-icon {
+          width: 56px;
+          height: 56px;
+          margin-bottom: 20px;
+          user-select: none;
+          filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+        }
 
-          <article class="feature-card" role="listitem" data-animate>
-            <header class="card-header">
-              <h3>Interview Practice</h3>
-            </header>
-            <div class="card-content">
-              <p>
-                Record practice interviews, review peer feedback, and polish your responses 
-                with professional guidance and assessment.
-              </p>
-            </div>
-          </article>
+        .card-header h3 {
+          margin: 0 0 14px;
+          font-size: 1.5rem;
+          color: #2c2c45;
+          font-weight: 700;
+          user-select: none;
+        }
 
-          <article class="feature-card" role="listitem" data-animate>
-            <header class="card-header">
-              <h3>Assessments</h3>
-            </header>
-            <div class="card-content">
-              <p>
-                Complete comprehensive assessments: Write-ups (12 points), Resume (8 points), 
-                Interviews (20 points), and Group Discussions (10 points).
-              </p>
-            </div>
-          </article>
+        .card-content p {
+          font-size: 1rem;
+          margin: 0 0 20px;
+          color: #444;
+          flex-grow: 1;
+          line-height: 1.45;
+          user-select: text;
+        }
+
+        .learn-more-btn {
+          align-self: start;
+          background: linear-gradient(135deg, #4f46e5, #06b6d4);
+          color: white;
+          border: none;
+          padding: 10px 18px;
+          border-radius: 10px;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 1rem;
+          box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+          transition: background 0.25s ease, box-shadow 0.25s ease;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .learn-more-btn:hover,
+        .learn-more-btn:focus {
+          background: linear-gradient(135deg, #4338ca, #0284c7);
+          box-shadow: 0 6px 18px rgba(66, 56, 202, 0.6);
+          outline: none;
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+          position: fixed;
+          top: 0; left: 0;
+          width: 100vw; height: 100vh;
+          background: rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(6px);
+          display: none;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          z-index: 1200;
+          overflow: hidden;
+        }
+
+        .modal-overlay.active {
+          display: flex;
+          animation: fadeInModal 0.35s ease forwards;
+        }
+
+        @keyframes fadeInModal {
+          from {opacity: 0;}
+          to {opacity: 1;}
+        }
+
+        .modal-card {
+          background: #fff;
+          width: 100%;
+          max-width: 720px;
+          max-height: 90vh;
+          border-radius: 28px;
+          box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          animation: zoomInScale 0.4s ease forwards;
+          user-select: text;
+        }
+
+        @keyframes zoomInScale {
+          from {transform: scale(0.7); opacity: 0;}
+          to {transform: scale(1); opacity: 1;}
+        }
+
+        .modal-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 28px 32px 20px;
+          border-bottom: 1px solid #eee;
+        }
+
+        .modal-header h3 {
+          margin: 0;
+          font-size: 2rem;
+          font-weight: 800;
+          color: #1a1a2e;
+          user-select: text;
+        }
+
+        .modal-close {
+          font-size: 2.2rem;
+          background: none;
+          border: none;
+          color: #999;
+          cursor: pointer;
+          transition: color 0.3s ease;
+          padding: 0;
+          user-select: none;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+          color: #333;
+          outline: none;
+        }
+
+        .modal-tabs {
+          display: flex;
+          border-bottom: 1px solid #ddd;
+          user-select: none;
+        }
+
+        .modal-tab {
+          flex: 1;
+          text-align: center;
+          padding: 14px 0;
+          font-weight: 700;
+          font-size: 1.1rem;
+          color: #555;
+          cursor: pointer;
+          background: transparent;
+          border-bottom: 3px solid transparent;
+          transition: color 0.3s ease, border-bottom-color 0.3s ease;
+          user-select: none;
+        }
+
+        .modal-tab.active {
+          color: #4f46e5;
+          border-bottom-color: #4f46e5;
+        }
+
+        .modal-body {
+          padding: 24px 32px;
+          overflow-y: auto;
+          flex-grow: 1;
+          font-size: 1rem;
+          line-height: 1.6;
+          color: #333;
+          white-space: pre-wrap; /* preserve \n */
+          user-select: text;
+        }
+
+        /* Scrollbar styling */
+        .modal-body::-webkit-scrollbar {
+          width: 8px;
+        }
+        .modal-body::-webkit-scrollbar-thumb {
+          background: #6b7280;
+          border-radius: 10px;
+        }
+        .modal-body::-webkit-scrollbar-track {
+          background: #e5e7eb;
+          border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 720px) {
+          .section-title h2 {
+            font-size: 2.2rem;
+          }
+          .feature-card {
+            padding: 20px 18px;
+          }
+          .card-header h3 {
+            font-size: 1.3rem;
+          }
+          .modal-card {
+            max-width: 100%;
+            border-radius: 20px;
+          }
+          .modal-header h3 {
+            font-size: 1.6rem;
+          }
+          .modal-tabs {
+            font-size: 0.95rem;
+          }
+          .modal-body {
+            padding: 16px 20px;
+            font-size: 0.95rem;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .features {
+            grid-template-columns: 1fr;
+          }
+          .learn-more-btn {
+            font-size: 0.9rem;
+            padding: 8px 14px;
+          }
+        }
+      </style>
+
+      <div class="section-title">
+        <h2 id="activities-title">Activities & Tasks</h2>
+      </div>
+
+      <div class="features" role="list">
+        <!-- Cards -->
+         <article class="feature-card" role="listitem"
+          data-title="Self Introduction"
+          data-overview="Hi, my name is Prakriti Kimothi. I’m currently in my 4th year of pursuing a B.Tech degree at Graphic Era Hill University. I’m really enjoying my time here, especially because I’m getting to learn so much about my field and also meet new people from different backgrounds.
+
+Before joining university, I completed my schooling at DAV Dehradun, which is where I grew up and still live. Dehradun is such a beautiful place, and I feel really lucky to call it home. I’ve always loved studying and exploring new things, which is why I chose engineering — I wanted to challenge myself and build a strong foundation for my future.
+
+Apart from academics, I enjoy spending time with my family and friends, and I like being involved in small creative projects or hobbies when I get free time. I also like listening to music and sometimes watching movies or web series to relax.
+
+Overall, I’m someone who is hardworking, curious, and always open to learning new things. I look forward to making the most of my final year and preparing myself for what comes next after graduation.
+
+Thanks for reading!"
+
+          data-details="When giving a self-introduction, start by stating your name and your current academic or professional status. Next, share some background about where you’re from or your previous education to give context.
+
+Then, talk about what motivates you or interests you in your field—this makes your introduction more personal and engaging. Adding a few details about your hobbies or passions can help connect with your audience on a human level.
+
+Make sure to organize your introduction with a clear beginning, middle, and end. Practice speaking naturally with enthusiasm and confidence. Remember to use positive body language, maintain eye contact, and smile genuinely to make a strong impression."
+          
+          data-tips="• Keep your introduction within 60-90 seconds to stay concise
+• Speak clearly and conversationally, as if talking to a friend
+• Smile warmly to create connection and approachability
+• Use simple, relatable language avoiding jargon
+• Maintain steady eye contact with the camera or listener
+• Sit or stand straight and use natural hand gestures"
+          
+          tabindex="0"
+        >
+          <img src="https://cdn-icons-png.flaticon.com/512/4140/4140041.png" alt="" class="feature-icon" aria-hidden="true">
+          <header class="card-header"><h3>Self Introduction</h3></header>
+          <div class="card-content">
+            <p>
+              Hi! To know more about me and see the results of my self-introduction practice, please click the button below.
+            </p>
+            <button class="learn-more-btn" aria-label="Learn more about Self Introduction">Learn More</button>
+          </div>
+        </article>
+
+
+        <article class="feature-card" role="listitem"
+          data-title="Public Speaking"
+          data-overview="Having completed my public speaking classes, I’ve gained valuable experience that has greatly improved my confidence and communication skills. These sessions, including JAM sessions and storytelling workshops, challenged me to think quickly and speak clearly in front of an audience.
+
+I learned how to effectively modulate my voice—adjusting pitch, pace, and volume—to keep listeners engaged and convey emotions appropriately. Understanding the power of body language helped me express my ideas more vividly and connect better with my audience.
+
+The workshops also emphasized the importance of structuring a speech well, with a clear introduction, a strong middle, and a memorable conclusion. This helped me organize my thoughts and deliver messages that are both persuasive and easy to follow.
+
+Interacting with the audience became a natural part of my presentations, allowing me to build rapport and maintain attention. Through continuous practice and feedback from peers and instructors, I refined my delivery, improved my stage presence, and grew more comfortable speaking publicly.
+
+Overall, these classes have been instrumental in shaping me into a confident speaker ready to take on various professional and social speaking opportunities."
+          
+          data-details="Public speaking is more than just talking in front of people; it involves several critical skills. Practicing impromptu speeches helps develop quick thinking and adaptability. Voice modulation allows you to add emotion and emphasis, making your speech captivating. Body language, including gestures, facial expressions, and posture, supports your words and builds trust with the audience.
+
+A well-structured speech—starting with a strong opening, followed by clear main points, and ending with a memorable conclusion—helps your message resonate. Engaging the audience through questions or eye contact makes your speech interactive and keeps listeners interested.
+
+Consistent practice, along with constructive feedback from peers and coaches, is key to improving public speaking skills and becoming a confident, effective communicator."
+
+          data-tips="• Start your speeches with an engaging hook to grab attention immediately
+• Use strategic pauses to highlight important points and give the audience time to absorb information
+• Practice in front of a mirror or record yourself to observe and refine your delivery and body language
+• Maintain steady eye contact with different audience members to foster connection
+• Use natural and purposeful gestures to support your message
+• Rehearse regularly to build comfort and fluidity in your speeches"
+          
+          tabindex="0"
+        >
+          <img src="https://cdn-icons-png.flaticon.com/512/892/892781.png" alt="" class="feature-icon" aria-hidden="true">
+          <header class="card-header"><h3>Public Speaking</h3></header>
+          <div class="card-content">
+            <p>
+              Hi! Having completed my public speaking classes, I’m excited to showcase how these experiences have helped me grow as a confident and engaging speaker. For more about my journey and progress, click below.
+            </p>
+            <button class="learn-more-btn" aria-label="Learn more about Public Speaking">Learn More</button>
+          </div>
+        </article>
+
+
+        <article class="feature-card" role="listitem"
+          data-title="Writing Skills"
+          data-overview="Developing strong writing skills is essential for clear communication, academic success, and professional growth. Through focused practice and analysis of professional writing samples, I’ve enhanced my ability to organize ideas and express them effectively.
+
+These sessions have helped me understand different writing styles and techniques, from crafting compelling essays to creating structured reports and engaging narratives. I’ve learned how to plan my writing carefully, using brainstorming and outlining to build a solid foundation before drafting.
+
+Feedback from peers and AI tools has been invaluable, highlighting areas for improvement in clarity, grammar, and tone. This process has sharpened my editing skills, enabling me to refine my work with attention to detail.
+
+Consistent practice with varied writing prompts has boosted my confidence and versatility as a writer. I now feel better equipped to tackle diverse writing challenges, whether academic, professional, or creative.
+
+Overall, this journey has deepened my appreciation for the power of words and their role in effective communication."
+
+          data-details="Effective writing involves several key steps. Begin by brainstorming and organizing your ideas to create a clear structure. Draft your content focusing on clarity, coherence, and purpose.
+
+Analyze professional writing samples to understand tone, style, and organization. Use feedback—both from peers and AI tools—to identify and correct grammar, punctuation, and flow issues.
+
+Practice revising and editing to enhance clarity and impact. Learn to adjust tone based on your audience and purpose, whether formal or informal, persuasive or informative."
+
+          data-tips="• Plan your writing with outlines or mind maps before starting
+• Write clear, concise sentences avoiding unnecessary jargon
+• Use varied sentence structures to keep the reader engaged
+• Proofread carefully to catch errors and improve flow
+• Read your work aloud to identify awkward phrasing
+• Practice regularly with different types of writing to build skill and confidence"
+
+          tabindex="0"
+        >
+          <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" alt="" class="feature-icon" aria-hidden="true">
+          <header class="card-header"><h3>Writing Skills</h3></header>
+          <div class="card-content">
+            <p>
+              Hi! Improving my writing skills has been an exciting journey. To explore how I’m advancing and see examples of my work, please click the button below.
+            </p>
+            <button class="learn-more-btn" aria-label="Learn more about Writing Skills">Learn More</button>
+          </div>
+        </article>
+
+
+        <article class="feature-card" role="listitem"
+          data-title="Journaling"
+          data-overview="Journaling has become one of the most powerful tools in my personal and academic development. It’s a habit I’ve developed through guided prompts and consistent reflection, and it has helped me become more self-aware, organized, and emotionally grounded.
+
+Maintaining a daily journal has given me space to reflect on my goals, track my progress, and understand my thoughts more clearly. Whether it’s reflecting on a productive day, identifying patterns in my mindset, or jotting down small wins, journaling brings clarity and purpose.
+
+I’ve used both professional and personal journaling formats—one to plan my academic tasks and projects, and the other to explore thoughts, emotions, and everyday experiences. This dual approach has allowed me to manage stress, stay focused, and express myself better.
+
+Guided journaling with daily prompts made it easier to start and stay consistent. Prompts like “What am I grateful for today?” or “What challenged me this week?” helped me go deeper and think more critically.
+
+Through this practice, I’ve noticed real improvements in my writing clarity, emotional balance, and time management. It’s a small daily habit that has made a big difference."
+          
+          data-details="Journaling is an excellent method for self-reflection, emotional clarity, and personal growth. Start with simple prompts that guide your thoughts. Use it to track progress on goals, reflect on daily experiences, and better understand your emotions.
+
+Professional journaling helps with task planning, productivity tracking, and setting clear weekly or monthly goals. Personal journaling can include reflections, gratitude, and emotional check-ins.
+
+The key is consistency and honesty. Don’t overthink the content—just let your thoughts flow naturally. Over time, patterns will emerge that help you grow and become more mindful."
+
+          data-tips="• Set a specific time to journal daily—even 5-10 minutes is enough
+• Use guided prompts to get started when you're unsure what to write
+• Be honest with yourself—there’s no right or wrong in journaling
+• Try both handwritten and digital formats to see what suits you
+• Reflect weekly on what you’ve written to spot patterns or progress
+• Don’t worry about grammar or structure—focus on expressing your thoughts"
+          
+          tabindex="0"
+        >
+          <img src="https://cdn-icons-png.flaticon.com/512/3103/3103446.png" alt="" class="feature-icon" aria-hidden="true">
+          <header class="card-header"><h3>Journaling</h3></header>
+          <div class="card-content">
+            <p>
+              Hi! Journaling has helped me grow personally and professionally. If you'd like to learn how I use journaling for reflection and self-growth, feel free to click the button below.
+            </p>
+            <button class="learn-more-btn" aria-label="Learn more about Journaling">Learn More</button>
+          </div>
+        </article>
+
+
+        <article class="feature-card" role="listitem"
+          data-title="Flash Cards"
+          data-overview="Flash cards have been a fun and effective way for me to reinforce learning across various subjects. I’ve created and used them regularly to test my understanding of key concepts, especially when preparing for exams or reviewing complex topics.
+
+Designing my own flash cards has helped me summarize information in a way that makes sense to me. Whether it's technical definitions, formulas, programming concepts, or theory-based questions, flash cards helped break down large chunks of material into quick, digestible pieces.
+
+What I really appreciated was the interactive aspect—being able to quiz myself, flip through them quickly, and immediately check my recall. It made learning less passive and more engaging.
+
+I also shared and exchanged flash cards with classmates, which turned studying into a collaborative experience. Getting others' perspectives and seeing how they approached the same topics made my understanding even stronger.
+
+This method has improved my memory retention, boosted my recall speed, and added a layer of confidence to my exam preparation and class participation."
+
+          data-details="Flash cards are a powerful active recall tool. Creating them requires condensing topics into clear questions and answers, which deepens understanding.
+
+They’re great for memorizing definitions, terms, formulas, steps in a process, or even concept explanations. You can organize flash cards by topics, difficulty levels, or deadlines to help manage your learning schedule.
+
+Using digital tools allows you to share flash cards with peers, collaborate on sets, and revisit them across devices. Self-testing using flash cards is one of the most proven methods for long-term memory retention."
+
+          data-tips="• Keep each flash card focused on one question or concept
+• Use images, symbols, or code snippets to make cards more visual
+• Review flash cards regularly using spaced repetition techniques
+• Shuffle the deck to challenge your recall in different orders
+• Use apps or digital tools to create, save, and share sets easily
+• Quiz yourself aloud to reinforce both recognition and articulation"
+
+          tabindex="0"
+        >
+          <img src="https://cdn-icons-png.flaticon.com/512/3542/3542377.png" alt="" class="feature-icon" aria-hidden="true">
+          <header class="card-header"><h3>Flash Cards</h3></header>
+          <div class="card-content">
+            <p>
+              Hi! I’ve used flash cards to reinforce my learning in a fun and efficient way. If you’d like to know how I create and use them to retain complex concepts, click below to explore more.
+            </p>
+            <button class="learn-more-btn" aria-label="Learn more about Flash Cards">Learn More</button>
+          </div>
+        </article>
+
+
+        <article class="feature-card" role="listitem"
+          data-title="Group Discussions"
+          data-overview="Participating in group discussions has been one of the most enriching experiences of my academic journey. These sessions helped me step out of my comfort zone, voice my thoughts, and engage in constructive dialogue with others.
+
+Through structured debates and collaborative discussions, I developed the ability to listen actively, respond thoughtfully, and present my viewpoints with clarity and confidence. It wasn’t just about speaking—it was about understanding different perspectives and building respectful communication habits.
+
+Group discussions also strengthened my critical thinking and quick decision-making skills. Working through problems as a team challenged me to think on my feet, analyze different arguments, and contribute meaningfully to collective ideas.
+
+I particularly enjoyed sessions where we tackled real-world topics and current affairs. These discussions broadened my general awareness and improved my ability to articulate opinions on diverse subjects.
+
+Overall, being part of dynamic discussion groups has sharpened both my communication and interpersonal skills, which I know will be valuable in both professional and collaborative environments."
+
+          data-details="Group discussions are excellent for developing communication, teamwork, and problem-solving skills. They encourage active participation and the respectful exchange of ideas.
+
+Key skills gained include listening carefully, speaking clearly, staying on topic, and building on others’ ideas. Structured debates help organize thoughts, present arguments logically, and learn to disagree respectfully.
+
+Collaborative problem-solving in group settings builds confidence and prepares you for real-world scenarios, such as interviews, team meetings, and professional brainstorming sessions."
+
+          data-tips="• Listen actively before responding—good communication starts with understanding
+• Stay calm, respectful, and confident even when opinions differ
+• Support your points with examples or facts to add weight to your arguments
+• Keep your responses clear and concise—avoid going off track
+• Encourage quieter group members to share by making space for all voices
+• Practice with friends or classmates to build fluency and ease"
+
+          tabindex="0"
+        >
+          <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="" class="feature-icon" aria-hidden="true">
+          <header class="card-header"><h3>Group Discussions</h3></header>
+          <div class="card-content">
+            <p>
+              Hi! Group discussions have helped me grow as a communicator and a team thinker. If you're curious about what I’ve learned through these collaborative sessions, click the button below to explore more.
+            </p>
+            <button class="learn-more-btn" aria-label="Learn more about Group Discussions">Learn More</button>
+          </div>
+        </article>
+
+
+        <article class="feature-card" role="listitem"
+          data-title="Interview Practice"
+          data-overview="Practicing for interviews has been one of the most impactful steps in preparing for my professional journey. Through mock interviews and recorded sessions, I’ve been able to improve how I present myself, respond to questions, and manage interview pressure.
+
+By recording my answers and reviewing them critically, I was able to catch nervous habits, filler words, and unclear phrasing that I wasn’t aware of before. This allowed me to work on refining my tone, posture, and language to appear more confident and articulate.
+
+The feedback I received from peers and mentors helped me understand how I’m perceived and what areas needed polishing. I practiced both technical and HR questions, preparing me for a variety of formats and industries.
+
+Each session taught me the importance of storytelling—how to talk about my achievements and experiences in a way that is both genuine and structured. I also learned to tailor responses according to the role and company, making my communication more intentional and impactful.
+
+Now, I feel more confident going into real interviews because I’ve already faced the tough questions and learned how to navigate them with composure and clarity."
+
+          data-details="Interview practice sessions simulate real-life job interview scenarios to help develop communication, self-presentation, and critical thinking under pressure.
+
+By recording mock interviews, you can observe your tone, posture, and clarity. Feedback helps identify improvement areas like filler words, lack of eye contact, or unclear phrasing.
+
+These sessions include practice for HR questions, technical assessments, and behavioral responses using the STAR method. Repeated practice builds confidence, improves structure in responses, and prepares you for real-world job interviews."
+
+          data-tips="• Research common questions for the role you're applying to
+• Use the STAR method (Situation, Task, Action, Result) to structure answers
+• Maintain eye contact and calm body language in video interviews
+• Practice out loud to build fluency and confidence
+• Record and review your interviews to track improvement
+• Ask for feedback from friends, mentors, or peers after each mock session"
+
+          tabindex="0"
+        >
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" class="feature-icon" aria-hidden="true">
+          <header class="card-header"><h3>Interview Practice</h3></header>
+          <div class="card-content">
+            <p>
+              Hi! I’ve been actively preparing for job interviews through recorded mock sessions and peer feedback. To see how I’ve improved and what I’ve learned, feel free to click below and explore more.
+            </p>
+            <button class="learn-more-btn" aria-label="Learn more about Interview Practice">Learn More</button>
+          </div>
+        </article>
+
+
+        <article class="feature-card" role="listitem"
+          data-title="Assessments"
+          data-overview="Taking part in a complete assessment process helped me evaluate my progress across multiple key areas—from technical writing to professional communication. These assessments were thoughtfully designed to mirror real-world situations and measure essential soft and hard skills.
+
+The write-ups allowed me to showcase my ability to think critically and structure ideas clearly, while the resume evaluation helped me refine how I present my academic and project experiences in a concise, impactful format.
+
+The interview rounds were incredibly valuable. Through both mock and formal interview sessions, I was able to improve how I speak about my background, achievements, and goals. The feedback I received helped me build confidence and polish my communication under pressure.
+
+Group discussions were another important component. They pushed me to engage with different perspectives, contribute thoughtfully, and collaborate effectively in a structured setting.
+
+Altogether, these assessments didn’t just test knowledge—they helped me grow. They highlighted my strengths, revealed areas for improvement, and gave me a well-rounded sense of where I stand professionally."
+
+          data-details="The full assessment included:
+• Write-Ups – 12 points: Evaluated on structure, clarity, grammar, and expression.
+• Resume – 8 points: Focused on formatting, keyword use, relevance, and impact.
+• Interviews – 20 points: Assessed communication skills, confidence, and ability to answer technical and HR questions.
+• Group Discussions – 10 points: Judged on participation, clarity of thought, listening skills, and collaborative communication.
+
+Each component was scored to provide detailed feedback and support continuous development."
+
+          data-tips="• Keep your resume tailored, clean, and achievement-oriented
+• Practice common interview questions using the STAR method
+• In write-ups, focus on clarity, flow, and logical structure
+• Listen actively and speak clearly during group discussions
+• Time yourself during tasks to improve efficiency under pressure
+• Use feedback as a tool for reflection and skill improvement"
+
+          tabindex="0"
+        >
+          <img src="https://cdn-icons-png.flaticon.com/512/3048/3048394.png" alt="" class="feature-icon" aria-hidden="true">
+          <header class="card-header"><h3>Assessments</h3></header>
+          <div class="card-content">
+            <p>
+              Hi! I recently completed a multi-part assessment that tested my communication, collaboration, and professional readiness. Click below to see how I performed and what I learned through the process.
+            </p>
+            <button class="learn-more-btn" aria-label="Learn more about Assessments">Learn More</button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Modal -->
+      <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalBody">
+        <div class="modal-card" tabindex="0">
+          <header class="modal-header">
+            <h3 id="modalTitle"></h3>
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+          </header>
+          <nav class="modal-tabs" role="tablist" aria-label="Details Tabs">
+            <button class="modal-tab active" data-tab="overview" role="tab" aria-selected="true" tabindex="0" id="tab-overview">Overview</button>
+            <button class="modal-tab" data-tab="details" role="tab" aria-selected="false" tabindex="-1" id="tab-details">Details</button>
+            <button class="modal-tab" data-tab="tips" role="tab" aria-selected="false" tabindex="-1" id="tab-tips">Tips</button>
+          </nav>
+          <section class="modal-body" id="modalBody" tabindex="0">
+            <p>Enter the content here.....</p>
+          </section>
         </div>
       </div>
+
+      <style>
+        [data-theme="dark"] #activities {
+          background: linear-gradient(135deg, #121212, #1e1e1e);
+          color: #ddd;
+          font-family: 'Segoe UI', sans-serif;
+        }
+
+        [data-theme="dark"] #activities .section-title h2 {
+          background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+
+        [data-theme="dark"] #activities .feature-card {
+          background: rgba(32, 32, 32, 0.75);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        [data-theme="dark"] #activities .card-header h3 {
+          color: #e0e0ff;
+        }
+
+        [data-theme="dark"] #activities .card-content p {
+          color: #ccc;
+        }
+
+        [data-theme="dark"] #activities .learn-more-btn {
+          background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+          box-shadow: 0 4px 12px rgba(139, 92, 246, 0.7);
+          color: white;
+        }
+
+        [data-theme="dark"] #activities .learn-more-btn:hover,
+        [data-theme="dark"] #activities .learn-more-btn:focus {
+          background: linear-gradient(135deg, #6d28d9, #0284c7);
+          box-shadow: 0 6px 18px rgba(79, 70, 229, 0.9);
+          outline: none;
+        }
+
+        [data-theme="dark"] #activities .modal-card {
+          background: #222;
+          color: #eee;
+          box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8);
+        }
+
+        [data-theme="dark"] #activities .modal-header h3 {
+          color: #ddd;
+        }
+
+        [data-theme="dark"] #activities .modal-tabs {
+          border-bottom-color: #444;
+        }
+
+        [data-theme="dark"] #activities .modal-tab {
+          color: #aaa;
+          border-bottom-color: transparent;
+        }
+
+        [data-theme="dark"] #activities .modal-tab.active {
+          color: #8b5cf6;
+          border-bottom-color: #8b5cf6;
+        }
+
+        [data-theme="dark"] #activities .modal-body {
+          color: #ccc;
+          background: transparent;
+        }
+
+        /* Scrollbar for modal body in dark mode */
+        [data-theme="dark"] #activities .modal-body::-webkit-scrollbar-thumb {
+          background: #555;
+        }
+
+        [data-theme="dark"] #activities .modal-body::-webkit-scrollbar-track {
+          background: #1c1c1c;
+        }
+
+      </style>
+      <script>
+        (() => {
+          const overlay = document.getElementById('modalOverlay');
+          const modalTitle = document.getElementById('modalTitle');
+          const modalBody = document.getElementById('modalBody');
+          const closeBtn = document.getElementById('modalClose');
+          const tabs = [...document.querySelectorAll('.modal-tab')];
+          const cards = [...document.querySelectorAll('.feature-card')];
+
+          let activeCard = null;
+
+          // Utility to update modal content by tab
+          function updateModalContent(tab, card) {
+            if (!card) {
+              modalBody.innerHTML = '<p>Enter content here...</p>';
+              return;
+            }
+            // Use data attributes with fallback placeholders
+            let content = card.dataset[tab] || 'Enter content here...';
+            // Convert newlines to <br> for better display
+            modalBody.innerHTML = content.replace(/\n/g, '<br>');
+          }
+
+          // Open modal with card data
+          function openModal(card) {
+            activeCard = card;
+            modalTitle.textContent = card.dataset.title || 'Untitled';
+            tabs.forEach(tabBtn => {
+              tabBtn.classList.remove('active');
+              tabBtn.setAttribute('aria-selected', 'false');
+              tabBtn.tabIndex = -1;
+            });
+            // Activate overview tab by default
+            const firstTab = tabs[0];
+            firstTab.classList.add('active');
+            firstTab.setAttribute('aria-selected', 'true');
+            firstTab.tabIndex = 0;
+            updateModalContent('overview', card);
+            overlay.classList.add('active');
+            // Focus modal for accessibility
+            overlay.querySelector('.modal-card').focus();
+          }
+
+          // Close modal
+          function closeModal() {
+            overlay.classList.remove('active');
+            activeCard = null;
+          }
+
+          // Event: open modal from card or button
+          cards.forEach(card => {
+            const btn = card.querySelector('.learn-more-btn');
+            const openHandler = (e) => {
+              e.stopPropagation();
+              openModal(card);
+            };
+            btn.addEventListener('click', openHandler);
+            // Allow keyboard enter/space on card to open modal
+            card.addEventListener('keydown', e => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal(card);
+              }
+            });
+          });
+
+          // Tabs click
+          tabs.forEach(tabBtn => {
+            tabBtn.addEventListener('click', () => {
+              if (!activeCard) return;
+              tabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+                t.tabIndex = -1;
+              });
+              tabBtn.classList.add('active');
+              tabBtn.setAttribute('aria-selected', 'true');
+              tabBtn.tabIndex = 0;
+              updateModalContent(tabBtn.dataset.tab, activeCard);
+              tabBtn.focus();
+            });
+          });
+
+          // Close modal on close btn
+          closeBtn.addEventListener('click', closeModal);
+
+          // Close modal on overlay click (outside modal)
+          overlay.addEventListener('click', e => {
+            if (e.target === overlay) closeModal();
+          });
+
+          // Close modal on Escape key
+          document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) {
+              closeModal();
+            }
+          });
+
+          // Focus trap inside modal for accessibility
+          overlay.addEventListener('keydown', e => {
+            if (!overlay.classList.contains('active')) return;
+            if (e.key === 'Tab') {
+              const focusable = overlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+              const focusableArray = Array.from(focusable).filter(el => el.offsetParent !== null);
+              const first = focusableArray[0];
+              const last = focusableArray[focusableArray.length - 1];
+
+              if (e.shiftKey) { // shift + tab
+                if (document.activeElement === first) {
+                  e.preventDefault();
+                  last.focus();
+                }
+              } else { // tab
+                if (document.activeElement === last) {
+                  e.preventDefault();
+                  first.focus();
+                }
+              }
+            }
+          });
+        })();
+      </script>
     </section>
+
   </main>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>About</h4>
-          <p>
-            Expertly crafted e-portfolio platform for PESE 610, designed with modern web standards, 
-            accessibility features, and performance optimization.
-          </p>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <div class="social-icons">
-            <a href="#" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
-              🔗
-            </a>
-            <a href="#" class="social-icon" aria-label="Twitter" title="Twitter">
-              🐦
-            </a>
-            <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
-              📸
-            </a>
-            <a href="#" class="social-icon" aria-label="Email" title="Email">
-              ✉️
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#" onclick="showToast('Privacy policy coming soon')">Privacy Policy</a></li>
-            <li><a href="#" onclick="showToast('Terms of use coming soon')">Terms of Use</a></li>
-            <li><a href="#" onclick="showToast('Accessibility statement available')">Accessibility</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 PESE 610 Professional E-Portfolio • All Rights Reserved • Built with Modern Web Standards</p>
-      </div>
-    </div>
-  </footer>
+<!-- Footer -->
+<footer class="footer" role="contentinfo" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #fff; padding: 3rem 1rem 2rem; font-family: 'Segoe UI', sans-serif;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Footer Grid -->
+    <div class="footer-grid" style="display: flex; flex-wrap: wrap; gap: 3rem; justify-content: space-between;">
 
-  <!-- Modal Template -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
-      <h3 id="modal-title">Modal Title</h3>
-      <div id="modal-body">Modal content will be loaded here.</div>
+      <!-- Quick Links -->
+      <div class="footer-col" style="flex: 1 1 250px;">
+        <h4 style="font-size: 1.25rem; margin-bottom: 1rem;">🔗 Quick Links</h4>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+          <li><a href="#hero" style="color: #ddd; text-decoration: none;">🏠 Home</a></li>
+          <li><a href="#overview" style="color: #ddd; text-decoration: none;">📖 Overview</a></li>
+          <li><a href="#activities" style="color: #ddd; text-decoration: none;">🛠️ Activities</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" style="flex: 1 1 250px;">
+        <h4 style="font-size: 1.25rem; margin-bottom: 1rem;">🔧 Resources Used</h4>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener" style="color: #ddd; text-decoration: none;">
+              📝 HTML5
+            </a>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener" style="color: #ddd; text-decoration: none;">
+              🎨 CSS3
+            </a>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener" style="color: #ddd; text-decoration: none;">
+              ⚙️ JavaScript
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+      <!-- Contact Info -->
+      <div class="footer-col" style="flex: 1 1 300px;">
+        <h4 style="font-size: 1.25rem; margin-bottom: 1rem;">📬 Get in Touch</h4>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">Thanks for exploring my portfolio!</p>
+        <p style="color: #ccc;"><strong>Email:</strong> prakritikimothi@gmail.com</p>
+        <p style="color: #ccc;"><strong>Location:</strong> Dehradun, India</p>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom" style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center;">
+      <p style="color: #aaa;">Designed & developed by <strong>Prakriti Kimothi</strong> • Crafted with 💻, ☕ & passion • 2025</p>
     </div>
   </div>
+</footer>
+
+
 
   <!-- JavaScript -->
   <script>
@@ -1802,43 +2476,6 @@
       if (section) {
         app.smoothScrollTo(section);
       }
-    }
-
-    function openModal(modalId) {
-      const modalContent = {
-        'self-intro-modal': {
-          title: 'Self Introduction Activity',
-          body: `
-            <div style="line-height: 1.6;">
-              <h4>Activity Overview</h4>
-              <p>The self-introduction activity is designed to help you build confidence in presenting yourself professionally.</p>
-              
-              <h4>Requirements</h4>
-              <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-                <li>Prepare a 2-3 minute introduction</li>
-                <li>Include educational background</li>
-                <li>Mention career goals and aspirations</li>
-                <li>Practice delivery and timing</li>
-              </ul>
-              
-              <h4>Assessment Criteria</h4>
-              <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-                <li>Clarity of speech (25%)</li>
-                <li>Content organization (30%)</li>
-                <li>Confidence and presence (25%)</li>
-                <li>Time management (20%)</li>
-              </ul>
-            </div>
-          `
-        }
-      };
-      
-      const content = modalContent[modalId] || { title: 'Information', body: '<p>Content not available.</p>' };
-      app.openModal(modalId, content);
-    }
-
-    function closeModal() {
-      app.closeModal();
     }
 
     function showToast(message, type = 'info') {
